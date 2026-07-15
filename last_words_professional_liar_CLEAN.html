@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Last Words of a Professional Liar</title>
+<style>
+:root {
+  --paper:#e8dfcd;
+  --ink:#17130f;
+  --red:#7d1717;
+  --gold:#8f6a2b;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:#0a0908;
+  color:var(--ink);
+  font-family:Georgia,"Times New Roman",serif;
+}
+.wrapper{
+  width:min(100%,980px);
+  margin:0 auto;
+  padding:42px 18px 120px;
+}
+.program{
+  position:relative;
+  background:
+    linear-gradient(rgba(255,255,255,.09),rgba(255,255,255,.02)),
+    repeating-linear-gradient(0deg,rgba(0,0,0,.018) 0 1px,transparent 1px 5px),
+    var(--paper);
+  box-shadow:0 30px 80px rgba(0,0,0,.55);
+  overflow:hidden;
+}
+.program::before{
+  content:"";
+  position:absolute;inset:0;
+  background:
+    radial-gradient(circle at 18% 12%,rgba(90,60,20,.08),transparent 18%),
+    radial-gradient(circle at 82% 68%,rgba(90,60,20,.06),transparent 22%);
+  pointer-events:none;
+}
+.cover{
+  min-height:92vh;
+  padding:54px clamp(24px,6vw,72px);
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  border-bottom:1px solid rgba(23,19,15,.2);
+}
+.cover-top{
+  display:flex;justify-content:space-between;
+  font:700 10px/1 Arial,sans-serif;
+  letter-spacing:.2em;text-transform:uppercase;
+  color:rgba(23,19,15,.5);
+}
+.cover h1{
+  margin:70px 0 0;
+  max-width:760px;
+  font-size:clamp(58px,10vw,132px);
+  line-height:.84;
+  font-weight:400;
+  letter-spacing:-.06em;
+  text-transform:uppercase;
+}
+.cover .official{
+  margin-top:26px;
+  max-width:620px;
+  font-size:clamp(19px,2vw,28px);
+  line-height:1.45;
+}
+.hand{
+  position:absolute;
+  color:var(--red);
+  font-family:"Comic Sans MS","Bradley Hand",cursive;
+  font-size:clamp(18px,2.2vw,30px);
+  transform:rotate(-4deg);
+}
+.hand.one{right:8%;top:26%}
+.hand.two{left:7%;bottom:14%;transform:rotate(3deg)}
+.redline{
+  text-decoration-line:line-through;
+  text-decoration-color:var(--red);
+  text-decoration-thickness:3px;
+}
+.contents{
+  padding:70px clamp(24px,7vw,86px) 100px;
+}
+.entry{
+  position:relative;
+  padding:34px 0 38px;
+  border-bottom:1px solid rgba(23,19,15,.16);
+}
+.entry p{
+  margin:0;
+  font-size:clamp(19px,2vw,27px);
+  line-height:1.65;
+  position:relative;
+  z-index:2;
+}
+
+
+
+
+
+
+
+
+
+.entry[data-index="5"]{
+  border-left:3px solid rgba(125,23,23,.72);
+  padding-left:22px;
+}
+.entry[data-index="9"] p{
+  background:linear-gradient(transparent 74%,rgba(125,23,23,.14) 74%);
+}
+.entry[data-index="23"] p,
+.entry[data-index="24"] p{
+  font-size:clamp(34px,5vw,64px);
+  line-height:1.05;
+  text-align:center;
+}
+
+.entry.tender{
+  margin:50px -24px;
+  padding:58px 24px;
+  background:#f4eee2;
+  border:1px solid rgba(23,19,15,.12);
+}
+.entry.tender::before,
+.entry.tender::after,
+.entry.tender .interference{display:none!important}
+.single-note{
+  margin:-18px 0 42px 7%;
+  color:var(--red);
+  font-family:"Comic Sans MS","Bradley Hand",cursive;
+  font-size:20px;
+  transform:rotate(-1deg);
+}
+.dead-note{
+  margin:46px 0;
+  text-align:center;
+  color:var(--red);
+  font-family:"Comic Sans MS","Bradley Hand",cursive;
+  font-size:clamp(22px,2.6vw,34px);
+  transform:rotate(-2deg);
+}
+.insert{
+  margin:80px 0 20px;
+  padding:28px;
+  border:1px solid rgba(23,19,15,.24);
+  background:#d9c7a6;
+  transform:rotate(-1deg);
+  box-shadow:0 16px 32px rgba(0,0,0,.16);
+}
+.insert .seal{
+  display:inline-block;
+  margin-bottom:18px;
+  border:1px solid var(--red);
+  color:var(--red);
+  padding:6px 10px;
+  font:700 9px/1 Arial,sans-serif;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+.final-sheet{
+  min-height:90vh;
+  display:grid;
+  place-items:center;
+  padding:80px 24px;
+  text-align:center;
+  border-top:1px solid rgba(23,19,15,.18);
+}
+.final-sheet h2{
+  margin:0;
+  font-size:clamp(58px,10vw,132px);
+  line-height:.82;
+  font-weight:400;
+  letter-spacing:-.06em;
+  text-transform:uppercase;
+}
+.final-sheet .trinity{
+  margin-top:42px;
+  font-size:clamp(34px,5vw,70px);
+  line-height:1.1;
+}
+.question{
+  margin-top:58px;
+  font-size:clamp(24px,3vw,40px);
+}
+.no{
+  margin-top:26px;
+  border:1px solid var(--red);
+  background:transparent;
+  color:var(--red);
+  padding:15px 24px;
+  font:700 11px/1 Arial,sans-serif;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  cursor:pointer;
+}
+.result{
+  min-height:34px;
+  margin-top:22px;
+  color:var(--red);
+  font-family:"Comic Sans MS","Bradley Hand",cursive;
+  font-size:24px;
+}
+@media(max-width:700px){
+  .hand.one{right:4%;top:31%}
+  .hand.two{left:6%;bottom:9%}
+  }
+</style>
+</head>
+<body>
+<div class="wrapper">
+  <article class="program">
+    <section class="cover">
+      <div class="cover-top"><span>Memorial Program</span><span>Final Edition</span></div>
+      <div>
+        <h1>Last Words of<br><span class="redline">A Professional Liar</span></h1>
+        <p class="official">He was, by all reliable accounts, a complicated man. Fortunately, none of the reliable accounts are speaking today.</p>
+      </div>
+      <div class="cover-top"><span>Prepared by those who survived him</span><span>Do not revise</span></div>
+      <div class="hand one">Please note the word “reliable.” I was feeling generous.</div>
+      <div class="hand two">Professional, yes. Liar, certainly. The rest is branding.</div>
+    </section>
+
+    <main class="contents">
+      <section class="entry " data-index="0"><p>welcome to my post-mortem monologue. I&#x27;d stand, but you know... circumstances.</p><div class="interference"></div></section><section class="entry " data-index="1"><p>To those who think they knew me, you saw what I allowed you to see. Watching shadows on water and thinking you&#x27;ve touched the depths. I performed normalcy with such grace, didn&#x27;t I? Wore my skin like a perfectly tailored suit. You never noticed how my laughter changed its tune, each version of me singing a different song.</p><div class="interference"></div></section><section class="entry " data-index="2"><p>To the ones who called me friend, half of you were right. The other half? I transformed your betrayals into verses so beautiful you&#x27;d weep reading them, without realizing you were crying for your own sins.</p><div class="interference"></div></section><div class="single-note">Friend is doing heroic work in that sentence.</div><section class="entry " data-index="3"><p>To my lovers, I kept something from each of you, little trophies of destruction. A truth about intimacy, it leaves traces that never wash away. Some nights I&#x27;d arrange your memories, wondering at how easily I gave myself or how I quietly allowed you to walk away.</p><div class="interference"></div></section><section class="entry " data-index="4"><p>To one who wrote me a monster to paint over their sins. You did well. I almost admire how perfectly you destroyed what wasn&#x27;t yours to break. How many men helped you perfect that portrait? But darling, the bloated corpse of truth won’t stay buried. They float. And the water&#x27;s rising...</p><div class="interference"></div></section><section class="entry " data-index="5"><p>To my family, I loved you in ways that felt like drowning. Your expectations were weights, pretty shackles, obligatory jewelry. But of my own forging. Sorry I could never quite be the masterpiece I wanted to hang on your wall. I was always more of a crime scene. Beautiful only to those who understand my violence.</p><div class="interference"></div></section><div class="dead-note">*laughs from the coffin*</div><section class="entry tender" data-index="7"><p>To mine. In my perfect performances and elegant deceptions, you were the only real thing. Not a role I played or a mask I wore. Just pure, unscripted love. While others demanded their pound of flesh, you just wanted stories and hugs, Your laughter just joy in its purest form. When the world was drowning in beautiful lies, you were my lifeline to what mattered. Even in a liar&#x27;s house, you kept me honest</p><div class="interference"></div></section><section class="entry " data-index="8"><p>Oh, and to those sitting in the back, pretending to mourn. I watched you practicing your sad faces in mirrors. I wrote your names in my memory, not for revenge, but because sometimes the best revenge is letting people know they were never important enough to hate.</p><div class="interference"></div></section><div class="single-note">The back row has suddenly become interested in the carpet.</div><section class="entry " data-index="9"><p>To the ones who truly loved me, I&#x27;m sorry I was a vault with a welcome mat. Sorry I made you solve riddles just to reach my heart. But god, wasn&#x27;t it beautiful when you did? When you found me behind all my walls and said &quot;Oh, there you are. I&#x27;ve been looking for you.&quot;</p><div class="interference"></div></section><section class="entry " data-index="10"><p>And to myself, the self I never quite became. We had plans, didn&#x27;t we? Wild, terrifying plans. Some of them we achieved in secret. Others we buried so deep, they&#x27;re still growing like nightshade between my ribs.</p><div class="interference"></div></section><section class="entry " data-index="11"><p>To those who feared me. Your instincts were better than your courage. You sensed the predator beneath my smile, didn&#x27;t you? But convinced yourselves it was just imagination. Funny how prey can smell danger but still freeze when it wears a familiar face.</p><div class="interference"></div></section><section class="entry " data-index="12"><p>To those who worshipped me. You beautiful, desperate fools. You built altars to a mirage, prayed to a carefully crafted illusion. Though I&#x27;ll admit, sometimes your devotion made me want to become the god you thought I was.</p><div class="interference"></div></section><div class="single-note">Please remain seated during the deification.</div><section class="entry " data-index="13"><p>Almost.</p><div class="interference"></div></section><section class="entry " data-index="14"><p>To those who tried to fix me. Thank you for the entertainment. Watching you try to solve me like a puzzle missing half its pieces was delicious. Did you ever realize you were using your own broken parts to try to mend mine?</p><div class="interference"></div></section><section class="entry " data-index="15"><p>To my greatest betrayer, blood of my blood. Monsters dwell not beneath beds, but beneath familiar roofs. You thought yourself my undoing, yet in your wake I arose everything you feared you could never become. And that victory etches a smile even death cannot claim.</p><div class="interference"></div></section><section class="entry " data-index="16"><p>And to all my mirrors. Want to know what I really saw? A carnival of everyone I could have been, dancing behind my eyes. Some nights I&#x27;d catch my reflection wearing someone else&#x27;s smile. Other nights, I wasn&#x27;t there at all. Just an elegant arrangement of masks performing a person.</p><div class="interference"></div></section><section class="entry " data-index="17"><p>And oh, the secrets.</p><div class="interference"></div></section><div class="dead-note">*laughs darkly*</div><section class="entry " data-index="19"><p>Some are buried so deep they&#x27;ll birth new religions when they&#x27;re found. Others still walk among you, wearing the faces of people you trust. A few wait in sealed envelopes, timed to arrive after I&#x27;m gone.</p><div class="interference"></div></section><section class="entry " data-index="20"><p>Consider them love letters from the beyond.</p><div class="interference"></div></section><section class="entry " data-index="21"><p>The many versions of me? There&#x27;s one in each of your minds, performing different roles in different plays. To some, I was saint, to others sinner. Mentor to these, monster to those. Lover, fighter, friend, fiend.</p><div class="interference"></div></section><div class="single-note">At last, a version everyone can misremember equally.</div><section class="entry " data-index="22"><p>All true.</p><div class="interference"></div></section><section class="entry " data-index="23"><p>All false.</p><div class="interference"></div></section><section class="entry " data-index="24"><p>All me.</p><div class="interference"></div></section><section class="entry " data-index="25"><p>We&#x27;re all just stories in the end, and I made sure to be a different genre for everyone.</p><div class="interference"></div></section><div class="dead-note">*straightens tie in death*</div><section class="entry " data-index="27"><p>Final thoughts? Life&#x27;s a dark comedy, death&#x27;s the punchline, and this funeral is my last performance. I hope you&#x27;re all thoroughly entertained. Or disturbed. Or both.</p><div class="interference"></div></section><div class="dead-note">*adjusts death shroud*</div><section class="entry " data-index="29"><p>So here I am, or rather, here I was. A walking contradiction, a living library of lies and truths so intertwined they became poetry.</p><div class="interference"></div></section><section class="entry " data-index="30"><p>I lived as a question mark and died as an ellipsis...</p><div class="interference"></div></section><section class="entry " data-index="31"><p>Don&#x27;t cry too hard. Or do. Just know I&#x27;m critiquing your performance from whatever comes next.</p><div class="interference"></div></section><div class="dead-note">*final bow*</div><section class="entry " data-index="33"><p>PS - Yes, I did that thing you all suspected but could never prove. And I&#x27;d do it again.</p><div class="interference"></div></section><section class="entry " data-index="34"><p>PPS - The real me? Oh darlings, that version is buried in a completely different graveyard, under a name none of you know.</p><div class="interference"></div></section><section class="entry " data-index="35"><p>PPPS - Check your mail. Not today. Not tomorrow. But someday. I&#x27;ve always believed in delayed gratification.</p><div class="interference"></div></section><div class="single-note">I was always better with timing than mercy.</div>
+
+      <div class="insert">
+        <div class="seal">Open after burial</div>
+        <p style="margin:0;font-size:clamp(20px,2.2vw,30px);line-height:1.5">
+          PS — Yes, I did that thing you all suspected but could never prove.
+          And I’d do it again.
+        </p>
+      </div>
+    </main>
+
+    <section class="final-sheet">
+      <div>
+        <h2>The official version has been withdrawn.</h2>
+        <div class="trinity">All true.<br>All false.<br>All me.</div>
+        <div class="question">Would you like the respectful version back?</div>
+        <button class="no" id="noButton">No.</button>
+        <div class="result" id="result"></div>
+      </div>
+    </section>
+  </article>
+</div>
+<script>
+document.getElementById('noButton').addEventListener('click',()=>{
+  document.getElementById('result').textContent='Good. It bored me too.';
+});
+</script>
+</body>
+</html>
